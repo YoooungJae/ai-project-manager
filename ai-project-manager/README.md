@@ -8,8 +8,7 @@ Stanford의 Generative Agents(2023) 논문 구조를 바탕으로, 역할이 다
 
 | 항목 | 내용 |
 | --- | --- |
-| 기간 | 2023.06 ~ 2023.12 (6~8월 논문 분석과 준비, 9~12월 구현) 
-|
+| 기간 | 2023.06 \~ 2023.12 (6\~8월 논문 분석과 준비, 9\~12월 구현) |
 | 팀 | 4인, 팀장 |
 | 기술 | Python, Django, Django Channels(WebSocket), OpenAI GPT-3.5-Turbo, JSON |
 
