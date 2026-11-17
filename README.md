@@ -8,7 +8,7 @@ Stanford의 Generative Agents(2023) 논문 구조를 바탕으로, 역할이 다
 
 | 항목 | 내용 |
 | --- | --- |
-| 기간 | 2023.06 ~ 2023.12 (6~8월 논문 분석과 준비, 9~12월 구현) |
+| 기간 | 2023.06 \~ 2023.12 (6\~8월 논문 분석과 준비, 9\~12월 구현) |
 | 팀 | 4인, 팀장 |
 | 기술 | Python, Django, Django Channels(WebSocket), OpenAI GPT-3.5-Turbo, JSON |
 
@@ -38,15 +38,15 @@ flowchart LR
 
 채팅방은 두 가지입니다. 하나는 AI끼리 토론하는 방이고, 다른 하나는 여러 사용자가 대화하다가 "Ai 야"로 시작하는 메시지를 보내면 리더 에이전트를 불러 실제 프로젝트 매니저처럼 쓰는 방입니다.
 
-![아키텍처](images/architecture.png)
-![메모리 스트림](images/memory_stream.png)
+![아키텍처](/ai-project-manager/images/architecture.png)
+![메모리 스트림](/ai-project-manager/images/memory_stream.png)
 
 ## 문제와 해결
 
 1. 답변 쏠림. 처음에는 모든 에이전트가 같은 기억을 공유해서, 역할이 달라도 비슷한 답만 나왔습니다. 팀원은 페르소나가 부족하다고 봤고 저는 메모리 구조가 원인이라고 봤습니다. 각자 수정안을 만들어 같은 주제로 돌려 비교했고, 둘 다 효과가 있어 함께 적용했습니다. 부록 코드의 `persona_histories`처럼 에이전트마다 대화 기억을 따로 두는 방식이 이때 들어갔습니다.
 2. 토큰 비용. 4개 에이전트로 실험하자 OpenAI API 토큰이 빠르게 소진됐습니다(발표 자료의 "OpenAI API 토큰 부족 문제"). 에이전트를 3개로 줄이고, 발언은 최대 6회, 에이전트가 생각하는 시간은 10분으로 제한했습니다. 부록 코드에서는 `max_conversation_length = 6`, `max_tokens=150`으로 남아 있습니다.
 
-![토큰 문제](images/token_cost_issue.png)
+![토큰 문제](/ai-project-manager/images/token_cost_issue.png)
 
 ## 결과
 
@@ -54,7 +54,7 @@ flowchart LR
 - 에이전트별 기억 분리로 역할별 관점이 드러나는 토론 흐름 확보
 - 한계: 논문의 기억 검색 점수와 Reflection(회고)은 구현하지 못함
 
-![최종 화면](images/final_ui.png)
+![최종 화면](/ai-project-manager/images/final_ui.png)
 
 ## 폴더
 
