@@ -1,0 +1,85 @@
+<!-- 출처: AI 프로젝트 매니저 최종보고서 부록 4, 채팅창 UI 코드 -->
+<body style="overflow: auto;">
+  <div id="Aiframe">
+    <div class="Aicontent">
+       <div class="Aimessages" id="Aimessages">
+           <ul id="chat-Aimessages">
+             {% for m in messages %}
+                <li class="{% if m.username == username %}replies{% else %}sent{% endif
+%}">
+                {% if m.username != username %}
+
+
+                {% endif %}
+                <p><b>{{ m.username }}</b>: {{ m.content }}</p>
+             </li>
+             {% endfor %}
+           </ul>
+       </div>
+    </div>
+  </div>
+  <section class="section">
+    <div id="frame">
+       <div class="content">
+           <div class="contact-profile">
+             <img src="{% static 'profile/Abigail_Chen.png' %}" alt="Profile Image">
+             <p><b>{{ username }}</b></p>
+             <div class="social-media">
+                <button type="button">
+                     <p><b>일정</b></p>
+                </button>
+                <button type="button">
+                     <p><b>할일</b></p>
+                </button>
+             </div>
+           </div>
+           <div class="messages" id="messages">
+             <ul id="chat-messages">
+                {% for m in messages %}
+                   <li class="{% if m.username == username %}replies{% else %}sent{% endif
+%}">
+                     {% if m.username != username %}
+                    {% endif %}
+                    <p><b>{{ m.username }}</b>: {{ m.content }}</p>
+                  </li>
+                  {% endfor %}
+              </ul>
+           </div>
+           <div class="message-input">
+              <div class="wrap">
+                            <input id="chat-message-input" type="text" placeholder="Write your
+message..." />
+                  <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+                      <button id="chat-message-submit" class="submit"><i class="fa fa-paper-
+plane"
+                          aria-hidden="true"></i></button>
+              </div>
+           </div>
+         </div>
+     </div>
+     <h3
+           style="font-size: 1.5em; margin-bottom: -0.5em; display: flex; align-items: center;
+justify-content: space-between;      flex-direction: column;">
+         Current Time:</h3>
+     <p>&nbsp;</p>
+     <div class="row">
+         <div class="col-md-8" id="game-time"
+               style="display: flex; align-items: center; justify-content: space-between;   flex-
+direction: column;">
+           <h2><span id="game-time-content" style="font-size: 1.5em"></span></h2>
+           <div style="text-align: right;">
+              <button id="play_button" type="button" class="btn btn-default">
+                    <strong style="font-size: 1.2em"><i class="glyphicon glyphicon-play"></i>
+&nbsp;Play</strong>
+              </button>
+
+
+              <button id="pause_button" type="button" class="btn btn-default">
+                  <strong style="font-size: 1.2em"><i class="glyphicon glyphicon-pause"></i>
+&nbsp;Pause</strong>
+              </button>
+           </div>
+         </div>
+     </div>
+  </section>
+<body>
